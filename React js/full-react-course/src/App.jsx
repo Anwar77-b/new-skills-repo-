@@ -1,9 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
+import UseReducerHook from "./course-sections/UseReducerHook";
+// import UseContextHook from "./course-sections/UseContextHook";
 
 const myContext = createContext()
 const App = () => {
   const [count, setCount] = useState(0)
-  const [name, setName] = useState("manny")
   // const [data, setData] = useState([])
   // useEffect(() => {
   //   const aa = async () => {
@@ -32,50 +33,13 @@ const App = () => {
         {/* {data.slice(0, 10).map(ele => {
           return (<p className="bg-gray-50 p-5">{ele.title ? ele.title : "nothing is here"}</p>)
         })} */}
-        <myContext.Provider value={{name, setName}}>
-          <Compo1/>
-        </myContext.Provider>
+        {/* <UseContextHook></UseContextHook> */}
+        <UseReducerHook></UseReducerHook>
       </main>
     </>
   );
 };
 
-
-const Compo1 = () => {
-  return (
-    <div className="border-blue-950 border-2 p-2">
-      component A
-      <Compo2></Compo2>
-    </div>
-  )
-}
-const Compo2 = () => {
-  return (
-    <div className="border-blue-950 border-2 p-2">
-      component B
-      <Compo3></Compo3>
-    </div>
-  )
-}
-const Compo3 = () => {
-  const value = useContext(myContext)
-  const [inp, setInp] = useState("")
-  return (
-    <div className="border-blue-950 border-2 p-2">
-      component C : {value.name}
-      <br />
-      <input type="text"  className="p-1 my-2" placeholder="new name" value={inp} onChange={(e) => {
-        setInp(e.target.value)
-      }}/>
-      <button className=" bg-purple-500 p-1  border-white" onClick={() => {
-        if (inp) {
-          value.setName(inp)
-          setInp("")
-        }
-      }}>Change Name</button>
-    </div>
-  )
-}
 
 
 
