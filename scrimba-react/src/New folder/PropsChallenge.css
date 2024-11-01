@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+  
+  h1.header {
+    font-size: 2rem;
+    background-color: #007575;
+    line-height: 1.1;
+    margin: 0;
+    text-align: center;
+    padding: 2rem;
+    color: rgba(255, 255, 255, 0.87);
+    box-shadow: 2px 3px 10px 7px #0000005e;
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: flex-start;
+    gap: 1rem;
+    .post {
+      padding: 10px;
+      border: 3px solid #007575;
+      text-align: center;
+      margin-bottom: 1rem;
+      h2 {
+        font-weight: 700;
+      }
+  
+    }
+  }
+  .btns {
+    padding: 10px;
+    border: 3px solid #007575;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    button {
+      padding: 5px 10px;
+      background-color: #760076;
+      color: #fff;
+      border:  0;
+      border-radius: 5px;
+      margin: 5px;
+      cursor: pointer;
+      transition-duration: 0.3s;
+      box-shadow: 0 0 8px 1px #00000099;
+    }
+    button:hover {
+      background-color: #4f004f;
+    }
+  }
+  
+  
