@@ -1,8 +1,9 @@
-import React, { createContext, useState } from "react";
-import UseReducerHook from "./course-sections/UseReducerHook";
+import { useState } from "react";
+// import UseReducerHook from "./course-sections/UseReducerHook";
 // import UseContextHook from "./course-sections/UseContextHook";
+import "./App.css"
+import UseRefHook from "./course-sections/useRefHook";
 
-const myContext = createContext()
 const App = () => {
   const [count, setCount] = useState(0)
   // const [data, setData] = useState([])
@@ -29,12 +30,13 @@ const App = () => {
         </ul>
         <button className="p-2 bg-violet-600 text-white cursor-pointer" onClick={() => setCount(count + 1)}>click me {count}</button>
       </header>
-      <main className="bg-gray-400 p-5 mx-20 my-5 rounded-md flex flex-col gap-2">
+      <main className="bg-gray-400 p-5 mx-20 my-5 rounded-md flex flex-col gap-2 bg">
         {/* {data.slice(0, 10).map(ele => {
           return (<p className="bg-gray-50 p-5">{ele.title ? ele.title : "nothing is here"}</p>)
         })} */}
         {/* <UseContextHook></UseContextHook> */}
-        <UseReducerHook></UseReducerHook>
+        {/* <UseReducerHook></UseReducerHook> */}
+        <UseRefHook></UseRefHook>
       </main>
     </>
   );
